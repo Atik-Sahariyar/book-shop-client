@@ -1,7 +1,7 @@
 import  {  useState } from "react";
 import { FaSearch, FaRegUser } from "react-icons/fa";
 import {  Link, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 import { useForm } from "react-hook-form";
 import useBaseRoute from "../hooks/useBaseRoute";
@@ -10,7 +10,6 @@ const Navbar = () => {
   const { register, handleSubmit , reset} = useForm();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
 
   const navigate = useNavigate();
   const email = localStorage.getItem("email")
@@ -25,10 +24,11 @@ const Navbar = () => {
     <nav className="sticky top-0 bg-white shadow-md z-50 w-full">
       <div className=" container mx-auto flex justify-between items-center h-16 px-4">
         {/* Logo */}
-        <div>
+        <div className=" flex gap-2 items-center">
           <Link to="/">
             <img src={logo} alt="Logo" className="logo-image h-10 w-10  rounded-tl-md rounded-br-md" />
           </Link>
+          <p className=" hidden md:block text-xl font-semibold">Pathshala</p>
         </div>
 
         {/* Desktop Menu */}
@@ -52,8 +52,8 @@ const Navbar = () => {
             Shop
           </Link>
     
-          <Link to="/contact" className="text-gray-700 font-semibold hover:text-black">
-            Contact
+          <Link to="/about" className="text-gray-700 font-semibold hover:text-black">
+            About
           </Link>
         </div>
 
@@ -164,8 +164,8 @@ const Navbar = () => {
             <Link to="#" className="text-gray-700 font-semibold hover:text-black">
               Blog
             </Link>
-            <Link to="/contact" className="text-gray-700 font-semibold hover:text-black">
-              Contact
+            <Link to="/about" className="text-gray-700 font-semibold hover:text-black">
+              About
             </Link>
           </div>
         </div>

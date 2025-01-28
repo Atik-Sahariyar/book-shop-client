@@ -23,12 +23,12 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-white shadow-md z-50 w-full">
       <div className=" container mx-auto flex justify-between items-center h-16 px-4">
-        {/* Logo */}
+        {/* Logo */}   
         <div className=" flex gap-2 items-center">
           <Link to="/">
             <img src={logo} alt="Logo" className="logo-image h-10 w-10  rounded-tl-md rounded-br-md" />
           </Link>
-          <p className=" hidden md:block text-xl font-semibold">Pathshala</p>
+          <p className=" text-xl font-semibold">Pathshala</p>
         </div>
 
         {/* Desktop Menu */}

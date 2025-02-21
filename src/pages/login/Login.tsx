@@ -11,24 +11,19 @@ const Login = () => {
   const navigate  = useNavigate();
   const [ login ] = useLoginMutation();
 
-  // handle login user
- const handleLoginWithEmailPass = async(data: { email: string, password: string}) =>{
+ // handle login user
+ const handleLoginWithEmailPass = async(data: { email: string, password: string }) =>{
    try{
-    const toastId  = toast.loading('Logging in');
-
+     const toastId  = toast.loading('Logging in');
      const res = await login(data);
-     console.log(res);
      if(res?.data?.success){
-        toast.success(res?.data?.message , { id: toastId, duration: 2000 });
+        toast.success(res?.data?.message, { id: toastId, duration: 2000 });
         reset();
         navigate("/");
      } else if (res?.error){
         toast.error(res?.error?.data?.message , { id: toastId, duration: 2000 });
-        console.log(res?.error?.data?.message)
      }
-
    } catch(err){
-    console.log(err)
     toast.error(err?.message,  { id: toastId, duration: 2000 })
    }
  }
